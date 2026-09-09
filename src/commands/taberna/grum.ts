@@ -95,7 +95,10 @@ export class GrumCommand implements Command {
           interaction.channel,
           'Grum (Cantinero)',
           settings?.grumAvatarUrl || null,
-          { embeds: [embed] }
+          {
+            content: `<@${userId}>`,
+            embeds: [embed]
+          }
         );
 
         await interaction.deleteReply();
