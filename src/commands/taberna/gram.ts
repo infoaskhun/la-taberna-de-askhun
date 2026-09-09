@@ -95,7 +95,10 @@ export class GramCommand implements Command {
           interaction.channel,
           'Gram (Cocinero)',
           settings?.gramAvatarUrl || null,
-          { embeds: [embed] }
+          {
+            content: `<@${userId}>`,
+            embeds: [embed]
+          }
         );
 
         await interaction.deleteReply();
